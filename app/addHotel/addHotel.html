@@ -1,0 +1,16 @@
+<form role="form" [formGroup]="addHotelForm">
+<div class="form-group">
+<label for="ime"><h3>Ime hotela:</h3></label>
+<input type="text" class="form-control" formControlName='ime'>
+</div>
+<div class="form-group">
+<label for="grad"><h3>Grad:</h3></label>
+<input type="text" class="form-control" formControlName='grad'>
+</div>
+<div class="form-group">
+<label for="drzava"><h3>Drzava:</h3></label>
+<input type="text" class="form-control" formControlName='drzava'>
+</div><br/>
+
+<button (click)="onAddHotel()" class="button"><h3>Dodaj hotel</h3></button>
+</form>
