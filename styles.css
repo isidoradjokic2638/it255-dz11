@@ -1,0 +1,32 @@
+h1 {
+  color: #369;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%;
+}
+h2 {
+  color: pink;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 150%;
+}
+h3 {
+  color: blue;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 100%;
+}
+
+
+.navbar-collapse {
+	padding-left: 50px;
+}
+.navbar-collapse ul {
+	list-style-type: square;
+    margin: 0;
+    padding: 1;
+    overflow: hidden;
+}
+
+.button {
+	background-color: pink;
+	height: 50px;
+	width:100px;
+}

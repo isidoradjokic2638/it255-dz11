@@ -7,14 +7,16 @@ import { routing } from './app.routes';
 
 import { AddHotelComponent } from './addHotel/addHotel.component';
 import { AddSobaComponent } from './addSoba/addSoba.component';
-import { SearchPipe } from './pipe/search'
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { SearchPipe } from './pipe/search';
 
 
 
 
 @NgModule({
 imports: [ BrowserModule, HttpModule, routing, FormsModule, ReactiveFormsModule ],
-declarations: [ AppComponent, AddHotelComponent, AddSobaComponent, SearchPipe],
+declarations: [ AppComponent, AddHotelComponent, AddSobaComponent, LoginComponent,RegisterComponent, SearchPipe],
 bootstrap: [ AppComponent ]
 })
 export class AppModule { }
