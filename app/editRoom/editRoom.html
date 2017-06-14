@@ -1,0 +1,16 @@
+<form role="form" [formGroup]="editRoomComponent">
+<div class="form-group">
+<label for="ime"><h3>Ime sobe:</h3></label>
+<input type="text" class="form-control" formControlName='ime'>
+</div>
+<div class="form-group">
+<label for="grad"><h3>Velicina:</h3></label>
+<input type="text" class="form-control" formControlName='velicina'>
+</div>
+<div class="form-group">
+<label for="drzava"><h3>Cena:</h3></label>
+<input type="text" class="form-control" formControlName='cena'>
+</div><br/>
+
+<button (click)="onEditRoom()" class="button"><h3>Edituj sobu</h3></button>
+</form>

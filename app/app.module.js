@@ -19,13 +19,16 @@ var addSoba_component_1 = require('./addSoba/addSoba.component');
 var login_component_1 = require('./login/login.component');
 var register_component_1 = require('./register/register.component');
 var search_1 = require('./pipe/search');
+var editRoom_component_1 = require('./editRoom/editRoom.component');
+var openRoom_component_1 = require('./openRoom/openRoom.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, http_1.HttpModule, app_routes_1.routing, forms_1.FormsModule, forms_1.ReactiveFormsModule],
-            declarations: [app_component_1.AppComponent, addHotel_component_1.AddHotelComponent, addSoba_component_1.AddSobaComponent, login_component_1.LoginComponent, register_component_1.RegisterComponent, search_1.SearchPipe],
+            declarations: [app_component_1.AppComponent, addHotel_component_1.AddHotelComponent, addSoba_component_1.AddSobaComponent, login_component_1.LoginComponent, register_component_1.RegisterComponent, search_1.SearchPipe,
+                openRoom_component_1.OpenRoomComponent, editRoom_component_1.EditRoomComponent],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

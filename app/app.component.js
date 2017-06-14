@@ -9,18 +9,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var http_1 = require('@angular/http');
 require('rxjs/Rx');
+var router_1 = require('@angular/router');
 var AppComponent = (function () {
-    function AppComponent() {
-        console.log("sisis");
+    function AppComponent(http, router) {
+        var _this = this;
+        this.http = http;
+        this.router = router;
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        headers.append('token', localStorage.getItem('token'));
+        http.get('http://localhost/baza/prikaz.php')
+            .map(function (res) { return res.json(); }).share()
+            .subscribe(function (data) {
+            console.log(data);
+            _this.data = data;
+        }, function (err) {
+            _this.router.navigate(['./']);
+        });
     }
+    AppComponent.prototype.editRoom = function (id) {
+        this.router.navigateByUrl('/editRoom/' + id);
+    };
+    AppComponent.prototype.openRoom = function (id) {
+        this.router.navigateByUrl('/openRoom/' + id);
+    };
+    AppComponent.prototype.deleteRoom = function (event, id) {
+        var headers = new Headers();
+        headers.append('Content-Type', 'application/x-www-form-urlencoded');
+        headers.append('token', localStorage.getItem('token'));
+        this.http.get('http://localhost/baza/deleteRoom.php?id=' + id)
+            .subscribe(function (data) {
+            console.log(data);
+            event.srcElement.parentElement.parentElement.remove();
+        });
+    };
     AppComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
             selector: 'app-root',
             templateUrl: './template.html',
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [http_1.Http, router_1.Router])
     ], AppComponent);
     return AppComponent;
 }());

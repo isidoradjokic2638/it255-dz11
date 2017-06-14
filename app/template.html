@@ -9,7 +9,7 @@
 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 <ul class="nav navbar-nav">
 
-<li routerLink="/addHotel" routerLinkActive="active"><a routerLink="/addHotel"><h2>Hotel</h2></a></li>
+<!-- <li routerLink="/addHotel" routerLinkActive="active"><a routerLink="/addHotel"><h2>Hotel</h2></a></li> -->
 <li routerLink="/addSoba" routerLinkActive="active"><a routerLink="/addSoba"><h2>Soba</h2></a></li>
 <li routerLink="/login" routerLinkActive="active"><a routerLink="/login"><h2>Login</h2></a></li>
 <li routerLink="/register" routerLinkActive="active"><a routerLink="/register"><h2>Registracija</h2></a></li>
@@ -20,4 +20,31 @@
 </nav>
 <div class="container">
 <router-outlet></router-outlet>
+ <div class="col-md-12">
+      <table class="table table-striped">
+
+        <tr>
+          <th><h2>ID</h2></th>
+          <th style="text-align: center"><h2>Ime</h2></th>
+          <th style="text-align: center"><h2>Velicina</h2></th>
+          <th style="text-align: center"><h2>Cena</h2></th>
+          <th style="text-align: center"><h2>Delete</h2></th>
+          <th style="text-align: center"><h2>Change</h2></th>
+          <th style="text-align: center"><h2>View</h2></th>
+        </tr>
+        <tbody>
+        <ng-container *ngFor="let room of data">
+          <tr>
+          <td>{{room.id}}</td>
+            <td>{{room.ime}}</td>
+            <td>{{room.velicina}}</td>
+            <td>{{room.cena}}</td>
+            <td><button class="btn btn-danger" (click)="deleteRoom($event, room.id)">Delete</button></td>
+            <td><button class="btn btn-danger" (click)="editRoom(room.id)">Change</button></td>
+            <td><button class="btn btn-default" (click)="openRoom(room.id)">View</button></td>
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+      </div>
 </div>

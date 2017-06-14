@@ -10,13 +10,16 @@ import { AddSobaComponent } from './addSoba/addSoba.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { SearchPipe } from './pipe/search';
+import { EditRoomComponent } from './editRoom/editRoom.component';
+import { OpenRoomComponent } from './openRoom/openRoom.component';
 
 
 
 
 @NgModule({
 imports: [ BrowserModule, HttpModule, routing, FormsModule, ReactiveFormsModule ],
-declarations: [ AppComponent, AddHotelComponent, AddSobaComponent, LoginComponent,RegisterComponent, SearchPipe],
+declarations: [ AppComponent, AddHotelComponent, AddSobaComponent, LoginComponent,RegisterComponent, SearchPipe,
+OpenRoomComponent,EditRoomComponent],
 bootstrap: [ AppComponent ]
 })
 export class AppModule { }
